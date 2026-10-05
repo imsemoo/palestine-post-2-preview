@@ -336,7 +336,7 @@ html { scrollbar-color: var(--seam-strong) var(--mist); scrollbar-width: thin; }
   color: var(--teal-ink);
   white-space: nowrap;
 }
-.dateline .x { --x-size: 0.6em; color: var(--madder); }
+.dateline .x { --x-size: 0.6em; color: var(--teal); }
 .dateline time { color: var(--ink-2); font-weight: 600; }
 a.dateline__place:hover { text-decoration: underline dashed 2px; text-underline-offset: 0.35em; }
 
@@ -350,9 +350,9 @@ a.dateline__place:hover { text-decoration: underline dashed 2px; text-underline-
 /* only a genuinely live item pulses: the breaking label */
 .live-dot--pulse { animation: pp-pulse 2.4s var(--ease-out) infinite; }
 @keyframes pp-pulse {
-  0% { box-shadow: 0 0 0 0 rgb(163 22 42 / 0.45); }
-  70% { box-shadow: 0 0 0 8px rgb(163 22 42 / 0); }
-  100% { box-shadow: 0 0 0 0 rgb(163 22 42 / 0); }
+  0% { box-shadow: 0 0 0 0 rgb(176 23 44 / 0.45); }
+  70% { box-shadow: 0 0 0 8px rgb(176 23 44 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(176 23 44 / 0); }
 }
 @media (prefers-reduced-motion: reduce) { .live-dot--pulse { animation: none; } }
 

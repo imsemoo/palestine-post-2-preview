@@ -12,11 +12,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fsn1.your-objectstorage.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400..900&amp;family=Noto+Naskh+Arabic:wght@400..700&amp;display=swap">
-<link rel="stylesheet" href="assets/css/tokens.css?v=16">
-<link rel="stylesheet" href="assets/css/base.css?v=16">
-<link rel="stylesheet" href="assets/css/components.css?v=16">
-<link rel="stylesheet" href="assets/css/pages.css?v=16">
-<script src="assets/js/pp.js?v=16" defer></script>
+<link rel="stylesheet" href="assets/css/tokens.css?v=21">
+<link rel="stylesheet" href="assets/css/base.css?v=21">
+<link rel="stylesheet" href="assets/css/components.css?v=21">
+<link rel="stylesheet" href="assets/css/pages.css?v=21">
+<script src="assets/js/pp.js?v=21" defer></script>
 
 </head>
 
@@ -135,10 +135,11 @@
       </nav>
       <form class="masthead__search" action="search.html" method="get" role="search">
         <label class="visually-hidden" for="q-head">ابحث في فلسطين بوست</label>
-        <input class="masthead__search-input" id="q-head" name="q" type="search" placeholder="ابحث عن خبر أو مكان أو كاتب" autocomplete="off" enterkeyhint="search">
+        <input class="masthead__search-input" id="q-head" name="q" type="search" placeholder="ابحث عن خبر أو مكان" autocomplete="off" enterkeyhint="search">
         <button class="masthead__search-btn" type="submit" aria-label="بحث"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
       </form>
       <div class="masthead__actions">
+        <a class="icon-btn masthead__send-icon" href="index.html#source" aria-label="أرسل خبرًا"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></a>
         <button class="icon-btn masthead__bell" type="button" data-notif-mobile aria-label="الإشعارات"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span class="tool__badge num" data-notif-count hidden>0</span></button>
         <button class="icon-btn masthead__search-open" type="button" data-search-open aria-label="بحث في فلسطين بوست"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
         <button class="icon-btn masthead__menu-btn" type="button" data-menu-open aria-label="القائمة" aria-haspopup="dialog"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
@@ -186,6 +187,9 @@
           <a class="chip is-active" href="podcast.html" aria-current="page">يوميات نازح في خيمة <span class="count num">6</span></a>
           <a class="chip" href="podcast.html">بودكاست بوست <span class="count num">2</span></a>
         </div>
+        <div class="program-head__actions">
+          <button class="btn btn--thread-light" type="button" data-share-url="podcast.html" data-share-title="يوميات نازح في خيمة — بودكاست فلسطين بوست"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-share"/></svg>شارك البرنامج</button>
+        </div>
       </div>
     </div>
   </header>
@@ -195,8 +199,7 @@
       <div class="section-head seam-bottom"><h2 class="section-head__title" id="now-title">أحدث حلقة</h2></div>
       <div class="episode episode--feature" data-player-host>
         <div class="episode__cover frame ratio-1x1"><img src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/6/file_68567ef241d8b.jpeg" width="600" height="600" loading="lazy" alt=""><span class="episode__no">الحلقة 6</span></div>
-        <div>
-          <p class="episode__program">يوميات نازح في خيمة</p>
+        <div class="episode__body">
           <h3 class="episode__title">ليلة ماطرة في الخيمة</h3>
           <p class="episode__meta">يونيو 2025 · <span class="num">2:20</span> دقيقة</p>
           <div class="pod-player" dir="ltr" data-pod-player data-duration="140">
@@ -207,12 +210,12 @@
 
       <div class="section-head seam-bottom program-list-head"><h2 class="section-head__title">كل الحلقات</h2><p class="section-head__note">من الأحدث إلى الأقدم</p></div>
       <ol class="episode-list episode-list--full">
-        <li class="ep-row is-current" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/6/file_68567f2063d03.mp3" data-duration="140" data-title="ليلة ماطرة في الخيمة" data-no="الحلقة 6" data-meta="يونيو 2025 · 2:20 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/6/file_68567ef241d8b.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: ليلة ماطرة في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">6</span>ليلة ماطرة في الخيمة<small>يونيو 2025</small></p><span class="ep-row__dur num">2:20</span></li>
-        <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68317bb3aa31f.mp3" data-duration="123" data-title="طابور طويل" data-no="الحلقة 5" data-meta="مايو 2025 · 2:03 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68317b7370fb6.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: طابور طويل"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">5</span>طابور طويل<small>مايو 2025</small></p><span class="ep-row__dur num">2:03</span></li>
-        <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682d88fd0145a.mp3" data-duration="132" data-title="بيبي جديد في الخيمة" data-no="الحلقة 4" data-meta="مايو 2025 · 2:12 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682d8888cfb6d.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: بيبي جديد في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">4</span>بيبي جديد في الخيمة<small>مايو 2025</small></p><span class="ep-row__dur num">2:12</span></li>
-        <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682c2c9e6bd8f.mp3" data-duration="144" data-title="الخصوصية في الخيمة" data-no="الحلقة 3" data-meta="مايو 2025 · 2:24 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682c2cab42d7a.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: الخصوصية في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">3</span>الخصوصية في الخيمة<small>مايو 2025</small></p><span class="ep-row__dur num">2:24</span></li>
-        <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682b06ffe0b23.mp3" data-duration="208" data-title="الخيمة مدرسة" data-no="الحلقة 2" data-meta="مايو 2025 · 3:28 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682b06dc0a500.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: الخيمة مدرسة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">2</span>الخيمة مدرسة<small>مايو 2025</small></p><span class="ep-row__dur num">3:28</span></li>
-        <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68271d9dcbac6.mp3" data-duration="229" data-title="يوميات نازح في خيمة" data-no="الحلقة 1" data-meta="مايو 2025 · 3:49 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68271d1685c7a.jpg"><button class="ep-row__play" type="button" aria-label="تشغيل: يوميات نازح في خيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">1</span>يوميات نازح في خيمة<small>مايو 2025</small></p><span class="ep-row__dur num">3:49</span></li>
+        <li class="ep-row is-current" id="ep-6" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/6/file_68567f2063d03.mp3" data-duration="140" data-title="ليلة ماطرة في الخيمة" data-no="الحلقة 6" data-meta="يونيو 2025 · 2:20 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/6/file_68567ef241d8b.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: ليلة ماطرة في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">6</span>ليلة ماطرة في الخيمة<small>يونيو 2025</small></p><span class="ep-row__dur num">2:20</span><button class="ep-row__share" type="button" data-share-url="podcast.html#ep-6" data-share-title="ليلة ماطرة في الخيمة — يوميات نازح في خيمة" aria-label="مشاركة حلقة: ليلة ماطرة في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-share"/></svg></button></li>
+        <li class="ep-row" id="ep-5" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68317bb3aa31f.mp3" data-duration="123" data-title="طابور طويل" data-no="الحلقة 5" data-meta="مايو 2025 · 2:03 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68317b7370fb6.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: طابور طويل"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">5</span>طابور طويل<small>مايو 2025</small></p><span class="ep-row__dur num">2:03</span><button class="ep-row__share" type="button" data-share-url="podcast.html#ep-5" data-share-title="طابور طويل — يوميات نازح في خيمة" aria-label="مشاركة حلقة: طابور طويل"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-share"/></svg></button></li>
+        <li class="ep-row" id="ep-4" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682d88fd0145a.mp3" data-duration="132" data-title="بيبي جديد في الخيمة" data-no="الحلقة 4" data-meta="مايو 2025 · 2:12 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682d8888cfb6d.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: بيبي جديد في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">4</span>بيبي جديد في الخيمة<small>مايو 2025</small></p><span class="ep-row__dur num">2:12</span><button class="ep-row__share" type="button" data-share-url="podcast.html#ep-4" data-share-title="بيبي جديد في الخيمة — يوميات نازح في خيمة" aria-label="مشاركة حلقة: بيبي جديد في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-share"/></svg></button></li>
+        <li class="ep-row" id="ep-3" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682c2c9e6bd8f.mp3" data-duration="144" data-title="الخصوصية في الخيمة" data-no="الحلقة 3" data-meta="مايو 2025 · 2:24 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682c2cab42d7a.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: الخصوصية في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">3</span>الخصوصية في الخيمة<small>مايو 2025</small></p><span class="ep-row__dur num">2:24</span><button class="ep-row__share" type="button" data-share-url="podcast.html#ep-3" data-share-title="الخصوصية في الخيمة — يوميات نازح في خيمة" aria-label="مشاركة حلقة: الخصوصية في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-share"/></svg></button></li>
+        <li class="ep-row" id="ep-2" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682b06ffe0b23.mp3" data-duration="208" data-title="الخيمة مدرسة" data-no="الحلقة 2" data-meta="مايو 2025 · 3:28 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682b06dc0a500.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: الخيمة مدرسة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">2</span>الخيمة مدرسة<small>مايو 2025</small></p><span class="ep-row__dur num">3:28</span><button class="ep-row__share" type="button" data-share-url="podcast.html#ep-2" data-share-title="الخيمة مدرسة — يوميات نازح في خيمة" aria-label="مشاركة حلقة: الخيمة مدرسة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-share"/></svg></button></li>
+        <li class="ep-row" id="ep-1" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68271d9dcbac6.mp3" data-duration="229" data-title="يوميات نازح في خيمة" data-no="الحلقة 1" data-meta="مايو 2025 · 3:49 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68271d1685c7a.jpg"><button class="ep-row__play" type="button" aria-label="تشغيل: يوميات نازح في خيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title"><span class="ep-row__no num">1</span>يوميات نازح في خيمة<small>مايو 2025</small></p><span class="ep-row__dur num">3:49</span><button class="ep-row__share" type="button" data-share-url="podcast.html#ep-1" data-share-title="يوميات نازح في خيمة — يوميات نازح في خيمة" aria-label="مشاركة حلقة: يوميات نازح في خيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-share"/></svg></button></li>
       </ol>
     </section>
 

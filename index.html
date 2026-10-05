@@ -12,11 +12,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fsn1.your-objectstorage.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400..900&amp;family=Noto+Naskh+Arabic:wght@400..700&amp;display=swap">
-<link rel="stylesheet" href="assets/css/tokens.css?v=16">
-<link rel="stylesheet" href="assets/css/base.css?v=16">
-<link rel="stylesheet" href="assets/css/components.css?v=16">
-<link rel="stylesheet" href="assets/css/pages.css?v=16">
-<script src="assets/js/pp.js?v=16" defer></script>
+<link rel="stylesheet" href="assets/css/tokens.css?v=21">
+<link rel="stylesheet" href="assets/css/base.css?v=21">
+<link rel="stylesheet" href="assets/css/components.css?v=21">
+<link rel="stylesheet" href="assets/css/pages.css?v=21">
+<script src="assets/js/pp.js?v=21" defer></script>
 
 </head>
 
@@ -143,10 +143,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </nav>
       <form class="masthead__search" action="search.html" method="get" role="search">
         <label class="visually-hidden" for="q-head">ابحث في فلسطين بوست</label>
-        <input class="masthead__search-input" id="q-head" name="q" type="search" placeholder="ابحث عن خبر أو مكان أو كاتب" autocomplete="off" enterkeyhint="search">
+        <input class="masthead__search-input" id="q-head" name="q" type="search" placeholder="ابحث عن خبر أو مكان" autocomplete="off" enterkeyhint="search">
         <button class="masthead__search-btn" type="submit" aria-label="بحث"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
       </form>
       <div class="masthead__actions">
+        <a class="icon-btn masthead__send-icon" href="index.html#source" aria-label="أرسل خبرًا"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></a>
         <button class="icon-btn masthead__bell" type="button" data-notif-mobile aria-label="الإشعارات"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span class="tool__badge num" data-notif-count hidden>0</span></button>
         <button class="icon-btn masthead__search-open" type="button" data-search-open aria-label="بحث في فلسطين بوست"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
         <button class="icon-btn masthead__menu-btn" type="button" data-menu-open aria-label="القائمة" aria-haspopup="dialog"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
@@ -208,19 +209,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           </ul>
         </div>
       </article>
-
-      <div class="front__more">
-        <article class="story story--image">
-          <div class="story__media frame ratio-3x2"><img src="https://fsn1.your-objectstorage.com/ppost/ppost/uploads/2026/10/file_6ac3a5bb0875b.webp" width="1280" height="853" loading="lazy" alt="مزارعون فلسطينيون في أرض زيتون في الضفة الغربية"></div>
-          <h3 class="story__title hl"><a href="article.html">المستوطنون يصعّدون اعتداءاتهم في الضفة.. إصابات وسرقة للزيتون واحتجاز عمال</a></h3>
-          <p class="story__meta"><span class="dateline">الضفة الغربية<i class="x" aria-hidden="true"></i><time datetime="2026-10-05T16:30+03:00">16:30</time></span></p>
-        </article>
-        <article class="story story--image">
-          <div class="story__media frame ratio-3x2"><img src="https://fsn1.your-objectstorage.com/ppost/ppost/uploads/2026/10/file_6ac36e42bc00b.webp" width="1280" height="853" loading="lazy" alt="آليات عسكرية على مدخل بلدة قرب الخليل"></div>
-          <h3 class="story__title hl"><a href="article.html">استشهاد شاب وإصابة اثنين برصاص الاحتلال قرب بني نعيم شرق الخليل</a></h3>
-          <p class="story__meta"><span class="dateline">الخليل<i class="x" aria-hidden="true"></i><time datetime="2026-10-05T12:26+03:00">12:26</time></span></p>
-        </article>
-      </div>
 
       <aside class="thread" aria-labelledby="thread-title" data-thread>
         <div class="thread__head section-head">
@@ -454,6 +442,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </tbody>
       </table>
       <ol class="weave__list">
+<li class="wl-axis" aria-hidden="true"><span class="wl-axis__scale"><span>قبل 12 ساعة</span><span>الآن</span></span></li>
 <li class="wl-item"><a class="wl-item__place" href="place.html">جنين<span class="weave__count num">خبر واحد</span></a><span class="wl-item__strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></span><p class="wl-item__latest"><a href="article.html"><time>13:22</time>إصابة 3 مواطنين باعتداء مستوطنين عليهم أثناء قطف الزيتون غرب جنين</a></p></li>
 <li class="wl-item"><a class="wl-item__place" href="place.html">نابلس<span class="weave__count num">3 أخبار</span></a><span class="wl-item__strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i></span><p class="wl-item__latest"><a href="article.html"><time>17:00</time>بعد إخلاء قسري لأكثر من شهرين.. 6 عائلات تعود إلى منازلها في تل جنوب نابلس</a></p></li>
 <li class="wl-item"><a class="wl-item__place" href="place.html">رام الله<span class="weave__count num">خبران</span></a><span class="wl-item__strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i class="on is-breaking"></i><i></i><i></i></span><p class="wl-item__latest"><a href="article.html"><time>15:16</time>الاحتلال يطلق النار على شاب شرق رام الله بزعم محاولة تنفيذ عملية طعن</a></p></li>
@@ -464,6 +453,27 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <li class="wl-quiet">لا أخبار خلال آخر 24 ساعة من: <a href="place.html">طوباس</a>، <a href="place.html">طولكرم</a>، <a href="place.html">قلقيلية</a>، <a href="place.html">سلفيت</a>، <a href="place.html">أريحا</a>، <a href="place.html">القدس</a>، <a href="place.html">بيت لحم</a></li>
 </ol>
       <p class="weave__foot"><span>المرور على أي غرزة يُظهر الخبر، والضغط عليها يفتحه.</span><a class="more-link" href="section.html">كل الأخبار المحلية<svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- MORE: the next two stories under the weave -->
+  <section class="more container" aria-labelledby="more-title">
+    <h2 class="visually-hidden" id="more-title">أخبار بارزة أخرى</h2>
+    <div class="more__grid">
+      <article class="story story--wide">
+        <div class="story__media frame ratio-3x2"><img src="https://fsn1.your-objectstorage.com/ppost/ppost/uploads/2026/10/file_6ac3a5bb0875b.webp" width="1280" height="853" loading="lazy" alt="مزارعون فلسطينيون في أرض زيتون في الضفة الغربية"></div>
+        <div class="story__body">
+          <h3 class="story__title hl"><a href="article.html">المستوطنون يصعّدون اعتداءاتهم في الضفة.. إصابات وسرقة للزيتون واحتجاز عمال</a></h3>
+          <p class="story__meta"><span class="dateline">الضفة الغربية<i class="x" aria-hidden="true"></i><time datetime="2026-10-05T16:30+03:00">16:30</time></span></p>
+        </div>
+      </article>
+      <article class="story story--wide">
+        <div class="story__media frame ratio-3x2"><img src="https://fsn1.your-objectstorage.com/ppost/ppost/uploads/2026/10/file_6ac36e42bc00b.webp" width="1280" height="853" loading="lazy" alt="آليات عسكرية على مدخل بلدة قرب الخليل"></div>
+        <div class="story__body">
+          <h3 class="story__title hl"><a href="article.html">استشهاد شاب وإصابة اثنين برصاص الاحتلال قرب بني نعيم شرق الخليل</a></h3>
+          <p class="story__meta"><span class="dateline">الخليل<i class="x" aria-hidden="true"></i><time datetime="2026-10-05T12:26+03:00">12:26</time></span></p>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -615,28 +625,28 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
     <div class="columns__grid swipe" tabindex="0" aria-label="المقالات، اسحب لعرض المزيد">
       <article class="column">
-        <a class="column__writer" href="section.html">د. محمود الحنفي</a><span class="column__bio"></span>
+        <a class="column__by" href="section.html"><span class="column__face column__face--initial" aria-hidden="true">م</span><span class="column__name"><span class="column__writer">د. محمود الحنفي</span></span></a>
         <h3 class="column__title hl"><a href="article.html">الاستبعاد المميت.. هل يتراجع مجلس السلام عن هذه الخطوة المسمومة؟</a></h3>
         <p class="column__dek">هل يملك مجلس السلام صلاحية تقييم وكالة أنشأتها الجمعية العامة للأمم المتحدة أو تعطيل ولايتها الممنوحة بموجب القرار رقم 302؟</p>
         <p class="column__meta"><time datetime="2026-10-01">1 أكتوبر 2026</time></p>
       </article>
       <article class="column">
-        <a class="column__writer" href="section.html">عريب الرنتاوي</a><span class="column__bio">كاتب ومحلل سياسي أردني</span>
+        <a class="column__by" href="section.html"><img class="column__face" src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/07/file_6865358434c92.jpg" srcset="https://ppost.ps/media/img/200/uploads/2025/07/file_6865358434c92.jpg.webp 200w" sizes="56px" width="56" height="56" loading="lazy" alt=""><span class="column__name"><span class="column__writer">عريب الرنتاوي</span><span class="column__bio">كاتب ومحلل سياسي أردني</span></span></a>
         <h3 class="column__title hl"><a href="article.html">نحن أمام لحظة قد تطوي صفحة نتنياهو إلى الأبد</a></h3>
         <p class="column__dek">على بعد خمسة أسابيع من انتخابات الكنيست، يزداد المشهد الإسرائيلي الداخلي «ضبابية»، وتضيف استطلاعات الرأي المختلفة مزيدًا من الغموض حول مستقبل السلطة والمعارضة في إسرائيل.</p>
         <p class="column__meta"><time datetime="2026-09-30">30 سبتمبر 2026</time></p>
       </article>
       <article class="column">
-        <a class="column__writer" href="section.html">روبين أندرسون</a><span class="column__bio"></span>
-        <h3 class="column__title hl"><a href="article.html">ملياردير إبستين الذي يخشى هند رجب</a></h3>
-        <p class="column__dek">أدى استبعاد مغني الراب الشهير ماكليمور من فقرة الافتتاح في جولة «لوب» للمغني البريطاني إد شيران إلى مساءلة تأخرت طويلًا للأشخاص والقوى التي نجحت في إسكات الأصوات المناهضة للإبادة الجماعية.</p>
-        <p class="column__meta"><time datetime="2026-09-25">25 سبتمبر 2026</time></p>
+        <a class="column__by" href="section.html"><img class="column__face" src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68208b8c56022.jpg" srcset="https://ppost.ps/media/img/200/uploads/2025/5/file_68208b8c56022.jpg.webp 200w" sizes="56px" width="56" height="56" loading="lazy" alt=""><span class="column__name"><span class="column__writer">د. عمار علي حسن</span><span class="column__bio">كاتب وباحث في علم الاجتماع السياسي</span></span></a>
+        <h3 class="column__title hl"><a href="article.html">ترمب والحبر الأعظم.. الجدل أخطر مما ترى</a></h3>
+        <p class="column__dek">يتكئ السجال الدائر بين بابا الفاتيكان ليو الرابع عشر والرئيس الأمريكي دونالد ترمب على تاريخ طويل من علاقة تقاربت حد التواطؤ، وتباعدت حد التلاسن، بين السلطتين الزمنية والدينية في الغرب.</p>
+        <p class="column__meta"><time datetime="2026-04-21">21 أبريل 2026</time></p>
       </article>
       <article class="column">
-        <a class="column__writer" href="section.html">عبد العظيم محمد عبد الرحيم</a><span class="column__bio"></span>
-        <h3 class="column__title hl"><a href="article.html">لا حل في الأفق بالضفة الغربية.. لكن هل تغيّر ميلانيا موقف ترمب؟</a></h3>
-        <p class="column__dek">بين لندن وتل أبيب، بدا هذا الأسبوع أن لغة السياسة البريطانية تجاه إسرائيل دخلت منعطفًا أكثر حدة، بعدما أعلنت الحكومة عقوبات تجارية على المستوطنات الإسرائيلية في الضفة الغربية.</p>
-        <p class="column__meta"><time datetime="2026-09-14">14 سبتمبر 2026</time></p>
+        <a class="column__by" href="section.html"><img class="column__face" src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/10/file_68f603cb6a983.jpg" srcset="https://ppost.ps/media/img/200/uploads/2025/10/file_68f603cb6a983.jpg.webp 200w" sizes="56px" width="56" height="56" loading="lazy" alt=""><span class="column__name"><span class="column__writer">حسن أوريد</span><span class="column__bio">أكاديمي وسياسي مغربي</span></span></a>
+        <h3 class="column__title hl"><a href="article.html">الفوضى تعبد الطريق إلى الحرب العالمية الثالثة</a></h3>
+        <p class="column__dek">التفكير في السلم ساعة الحرب واجب، ولكن لا يكفي أن نفكر فيه كحالة أو مقتضى أخلاقي، بل يتوجب التفكير في الآليات التي من شأنها أن تحقق السلم، والوقوف على الأسباب التي تفضي للحرب.</p>
+        <p class="column__meta"><time datetime="2026-04-13">13 أبريل 2026</time></p>
       </article>
     </div>
   </section>
@@ -651,19 +661,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div>
         <div class="episode" data-player-host>
           <div class="episode__cover frame ratio-1x1"><img src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/6/file_68567ef241d8b.jpeg" width="600" height="600" loading="lazy" alt=""><span class="episode__no">الحلقة 6</span></div>
-          <div>
-            <p class="episode__program"><a href="podcast.html">يوميات نازح في خيمة</a></p>
+          <div class="episode__body">
             <h3 class="episode__title">ليلة ماطرة في الخيمة</h3>
-            <p class="episode__meta">يونيو 2025 · <span class="num">2:20</span> دقيقة</p>
+            <p class="episode__meta">يوميات نازح في خيمة · يونيو 2025 · <span class="num">2:20</span> دقيقة</p>
             <div class="pod-player" dir="ltr" data-pod-player data-duration="140">
               <audio controls preload="none" data-title="ليلة ماطرة في الخيمة"><source src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/6/file_68567f2063d03.mp3" type="audio/mpeg"><a href="https://fsn1.your-objectstorage.com/ppost/uploads/2025/6/file_68567f2063d03.mp3">تنزيل الحلقة</a></audio>
             </div>
           </div>
         </div>
         <ol class="episode-list">
-          <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68317bb3aa31f.mp3" data-duration="123" data-title="طابور طويل" data-no="الحلقة 5" data-meta="مايو 2025 · 2:03 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68317b7370fb6.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: طابور طويل"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title">طابور طويل<small>يوميات نازح في خيمة · الحلقة 5</small></p><span class="ep-row__dur num">2:03</span></li>
-          <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682d88fd0145a.mp3" data-duration="132" data-title="بيبي جديد في الخيمة" data-no="الحلقة 4" data-meta="مايو 2025 · 2:12 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682d8888cfb6d.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: بيبي جديد في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title">بيبي جديد في الخيمة<small>يوميات نازح في خيمة · الحلقة 4</small></p><span class="ep-row__dur num">2:12</span></li>
-          <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68299af75d245.mp3" data-duration="231" data-title="رحلات النزوح.. فرارٌ من الموت إلى الموت" data-no="بودكاست بوست" data-meta="مايو 2025 · 3:51 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_6829a2b2b8aa4.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: رحلات النزوح"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title">رحلات النزوح.. فرارٌ من الموت إلى الموت<small>بودكاست بوست</small></p><span class="ep-row__dur num">3:51</span></li>
+          <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68317bb3aa31f.mp3" data-duration="123" data-title="طابور طويل" data-no="الحلقة 5" data-meta="يوميات نازح في خيمة · مايو 2025 · 2:03 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68317b7370fb6.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: طابور طويل"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title">طابور طويل<small>يوميات نازح في خيمة · الحلقة 5</small></p><span class="ep-row__dur num">2:03</span></li>
+          <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682d88fd0145a.mp3" data-duration="132" data-title="بيبي جديد في الخيمة" data-no="الحلقة 4" data-meta="يوميات نازح في خيمة · مايو 2025 · 2:12 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_682d8888cfb6d.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: بيبي جديد في الخيمة"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title">بيبي جديد في الخيمة<small>يوميات نازح في خيمة · الحلقة 4</small></p><span class="ep-row__dur num">2:12</span></li>
+          <li class="ep-row" data-src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_68299af75d245.mp3" data-duration="231" data-title="رحلات النزوح.. فرارٌ من الموت إلى الموت" data-no="بودكاست بوست" data-meta="بودكاست بوست · مايو 2025 · 3:51 دقيقة" data-img="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_6829a2b2b8aa4.jpeg"><button class="ep-row__play" type="button" aria-label="تشغيل: رحلات النزوح"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-play"/></svg></button><p class="ep-row__title">رحلات النزوح.. فرارٌ من الموت إلى الموت<small>بودكاست بوست</small></p><span class="ep-row__dur num">3:51</span></li>
         </ol>
       </section>
 
@@ -698,15 +707,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="quotes__grid swipe" tabindex="0" aria-label="الاقتباسات، اسحب لعرض المزيد">
       <figure class="quote">
         <blockquote><p class="quote__text">«قوات الاحتلال والمستوطنون نفذوا 2051 اعتداءً ضد الفلسطينيين وأراضيهم وممتلكاتهم خلال سبتمبر الماضي»</p></blockquote>
-        <figcaption><a class="quote__by" href="section.html">هيئة مقاومة الجدار والاستيطان</a><span class="quote__role">هيئة حكومية فلسطينية</span></figcaption>
+        <figcaption class="quote__cap"><img class="quote__face" src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/11/file_6905d5a00330f.jpg" srcset="https://ppost.ps/media/img/200/uploads/2025/11/file_6905d5a00330f.jpg.webp 200w" sizes="40px" width="40" height="40" loading="lazy" alt=""><span><a class="quote__by" href="section.html">هيئة مقاومة الجدار والاستيطان</a><span class="quote__role">هيئة حكومية فلسطينية</span></span></figcaption>
       </figure>
       <figure class="quote">
         <blockquote><p class="quote__text">«المواطنون في قطاع غزة ما زالوا يواجهون أزمة إنسانية معقدة رغم إحراز بعض التقدم في إدخال المواد الغذائية»</p></blockquote>
-        <figcaption><a class="quote__by" href="section.html">الأمم المتحدة</a><span class="quote__role">منظمة دولية</span></figcaption>
+        <figcaption class="quote__cap"><img class="quote__face" src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/5/file_681f06d8f2f78.jpg" srcset="https://ppost.ps/media/img/200/uploads/2025/5/file_681f06d8f2f78.jpg.webp 200w" sizes="40px" width="40" height="40" loading="lazy" alt=""><span><a class="quote__by" href="section.html">الأمم المتحدة</a><span class="quote__role">منظمة دولية</span></span></figcaption>
       </figure>
       <figure class="quote">
         <blockquote><p class="quote__text">«لا غنى عن الأونروا ولا يمكن استبدالها، ويجب تقديم الدعم السياسي والمالي للوكالة وحماية ولايتها»</p></blockquote>
-        <figcaption><a class="quote__by" href="section.html">أنطونيو غوتيريش</a><span class="quote__role">الأمين العام للأمم المتحدة</span></figcaption>
+        <figcaption class="quote__cap"><img class="quote__face" src="https://fsn1.your-objectstorage.com/ppost/uploads/2025/09/file_68ce4b0d7b541.jpg" srcset="https://ppost.ps/media/img/200/uploads/2025/09/file_68ce4b0d7b541.jpg.webp 200w" sizes="40px" width="40" height="40" loading="lazy" alt=""><span><a class="quote__by" href="section.html">أنطونيو غوتيريش</a><span class="quote__role">الأمين العام للأمم المتحدة</span></span></figcaption>
       </figure>
     </div>
   </section>

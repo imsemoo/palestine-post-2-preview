@@ -426,6 +426,19 @@
     });
   }
 
+  /* ---- Share: the phone's own sheet, otherwise the link is copied ------- */
+  function initShare() {
+    $$("[data-share-url]").forEach((b) => b.addEventListener("click", async () => {
+      const url = new URL(b.dataset.shareUrl, location.href).href;
+      if (navigator.share) {
+        try { await navigator.share({ title: b.dataset.shareTitle || document.title, url }); } catch { /* sheet dismissed */ }
+        return;
+      }
+      try { await navigator.clipboard.writeText(url); toast("نُسخ الرابط"); }
+      catch { toast("انسخ الرابط من شريط العنوان"); }
+    }));
+  }
+
   /* ---- Article tools: type size, share, progress ------------------------ */
   function initArticle() {
     const body = $("[data-article-body]");
@@ -540,6 +553,7 @@
     initSheets();
     initPlayers();
     initVideo();
+    initShare();
     initArticle();
     initLoadMore();
     initChips();

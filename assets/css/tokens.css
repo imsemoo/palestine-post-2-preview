@@ -65,6 +65,7 @@
   --st: 4px;
   --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px; --s5: 24px;
   --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+  --band: var(--s7);                        /* space above each band of a page */
   --gutter: clamp(16px, 3.2vw, 40px);       /* page side padding */
   --col-gap: clamp(20px, 2.4vw, 36px);      /* column gap — a column rule sits in it */
 
