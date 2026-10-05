@@ -38,6 +38,7 @@
   align-items: center;
   gap: var(--s5);
   min-block-size: 40px;
+  padding-block: 4px;
 }
 .masthead__date { display: flex; gap: var(--s3); align-items: baseline; color: #fff; font-weight: 600; white-space: nowrap; }
 .masthead__hijri { color: #A9C6D0; font-weight: 500; }
@@ -396,7 +397,8 @@
 .breaking::after { inset-block-end: 4px; }
 .breaking__inner { display: flex; align-items: center; gap: var(--s4); min-block-size: 56px; padding-block: var(--s3); }
 .breaking__label { display: inline-flex; align-items: center; gap: var(--s2); font-weight: 900; font-size: 1.0625rem; flex: none; }
-.breaking__label .live-dot { background: #fff; box-shadow: 0 0 0 0 rgb(255 255 255 / 0.6); animation-name: pp-pulse-w; }
+.breaking__label .live-dot { background: #fff; animation: pp-pulse-w 2.4s var(--ease-out) infinite; }
+@media (prefers-reduced-motion: reduce) { .breaking__label .live-dot { animation: none; } }
 @keyframes pp-pulse-w { 0% { box-shadow: 0 0 0 0 rgb(255 255 255 / 0.6); } 70% { box-shadow: 0 0 0 8px rgb(255 255 255 / 0); } 100% { box-shadow: 0 0 0 0 rgb(255 255 255 / 0); } }
 .breaking__text { flex: 1; min-width: 0; font-weight: 700; font-size: 1.0625rem; line-height: 1.55; }
 .breaking__text a { text-decoration: underline dashed rgb(255 246 244 / 0.5) 1.5px; text-underline-offset: 0.35em; }
@@ -413,7 +415,16 @@
    FRONT: lead (the chest panel) + thread
    --------------------------------------------------------------------- */
 .front { padding-block: var(--s6) var(--s7); }
-.front__grid { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--col-gap); align-items: start; }
+.front__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  grid-template-areas: "lead thread" "more thread";
+  gap: 0 var(--col-gap);
+  align-items: start;
+}
+.front__grid > .lead { grid-area: lead; }
+.front__grid > .thread { grid-area: thread; }
+.front__grid > .front__more { grid-area: more; }
 
 .lead { position: relative; }
 .lead__media { display: block; aspect-ratio: 16 / 9; }
@@ -434,8 +445,8 @@
 .lead__related a { font-weight: 700; font-size: var(--fs-h4); line-height: 1.6; color: var(--ink); }
 .lead__related .t-meta { display: block; margin-block-start: 2px; }
 /* two secondary stories carry the lead column down beside the thread */
-.lead__more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--col-gap); margin-block-start: var(--s6); padding-block-start: var(--s5); border-block-start: 1px solid var(--rule); }
-.lead__more .story__title { font-size: var(--fs-h3); font-weight: 800; color: var(--navy); }
+.front__more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--col-gap); margin-block-start: var(--s6); padding-block-start: var(--s5); border-block-start: 1px solid var(--rule); }
+.front__more .story__title { font-size: var(--fs-h3); font-weight: 800; color: var(--navy); }
 .thread__expand { display: none; margin-block-start: var(--s3); inline-size: 100%; }
 
 /* the thread — latest news as one running stitch, newest first */
@@ -575,7 +586,6 @@
   line-height: 1.55;
   text-align: start;
   white-space: normal;
-  box-shadow: var(--shadow-float);
   display: none;                     /* out of layout until asked: no overflow on small screens */
   pointer-events: none;
 }
@@ -977,7 +987,6 @@
   background: var(--navy);
   color: var(--paper-raised);
   font-weight: 700;
-  box-shadow: var(--shadow-float);
   animation: pp-drop var(--dur-2) var(--ease-out);
 }
 .toast .icon { color: var(--teal); }
@@ -992,7 +1001,6 @@
   block-size: 48px;
   background: var(--paper-raised);
   color: var(--navy);
-  box-shadow: var(--shadow-float);
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);

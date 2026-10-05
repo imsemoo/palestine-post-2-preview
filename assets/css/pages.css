@@ -47,7 +47,8 @@
   .masthead__tools .tool, .masthead__send { display: none; }
   .masthead__bell { display: inline-grid; }
 
-  .front__grid { grid-template-columns: minmax(0, 1fr); row-gap: var(--s7); }
+  .front__grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "lead" "thread" "more"; row-gap: var(--s7); }
+  .front__more { margin-block-start: 0; }
   .lead__panel { margin-inline-end: 6%; }
 
   .weave__table { display: none; }
@@ -78,7 +79,7 @@
 @media (max-width: 767px) {
   :root { --col-gap: 20px; }
   .masthead { --logo-h: 40px; --logo-top: 9px; --bar-h: 58px; }
-  .masthead__strip-inner { min-block-size: 40px; gap: var(--s3); justify-content: space-between; }
+  .masthead__strip-inner { min-block-size: 40px; gap: var(--s3); justify-content: space-between; padding-block: 4px; }
   .masthead__hijri { display: none; }
   .place-rail__all { padding-inline-end: var(--s2); }
   .place-rail__inner { gap: var(--s1); }
@@ -88,7 +89,7 @@
   .thread:not(.is-expanded) [data-extra] { display: none; }
   .thread__expand { display: inline-flex; }
   .thread.is-expanded .thread__expand { display: none; }
-  .lead__more { grid-template-columns: minmax(0, 1fr); row-gap: var(--s5); }
+  .front__more { grid-template-columns: minmax(0, 1fr); row-gap: var(--s5); }
 
   /* opinion and quotes become swipeable rows */
   .swipe {
