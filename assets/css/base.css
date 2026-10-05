@@ -1,0 +1,377 @@
+/* =========================================================================
+   Palestine Post 2.0 — base: reset, type, layout primitives, marks
+   ========================================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 96px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-kufi);
+  font-size: var(--fs-ui);
+  line-height: var(--lh-ui);
+  letter-spacing: normal;            /* Arabic is connected script: never track it */
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  caret-color: var(--teal-ink);
+  accent-color: var(--teal-ink);
+}
+
+img, svg, video, iframe { display: block; max-width: 100%; }
+img { height: auto; background: var(--mist); }
+h1, h2, h3, h4, h5, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; letter-spacing: normal; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+time, .num { font-variant-numeric: tabular-nums lining-nums; }
+[hidden] { display: none !important; }
+
+::selection { background: var(--teal-wash); color: var(--ink); }
+
+/* scrollbars carry the palette too */
+html { scrollbar-color: var(--seam-strong) var(--mist); scrollbar-width: thin; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--mist); }
+::-webkit-scrollbar-thumb { background: var(--seam-strong); border: 2px solid var(--mist); }
+
+/* ---- Focus: strong, never removed ---------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+.on-navy :focus-visible, .band--navy :focus-visible { outline-color: var(--teal); }
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: var(--s4);
+  inset-block-start: -100px;
+  z-index: var(--z-toast);
+  background: var(--navy);
+  color: var(--paper-raised);
+  padding: var(--s3) var(--s4);
+  font-weight: 700;
+}
+.skip-link:focus { inset-block-start: var(--s3); }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Layout primitives --------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+}
+.grid-12 > * { min-width: 0; }
+
+.stack > * + * { margin-block-start: var(--stack, var(--s4)); }
+.stack--tight { --stack: 2px; }
+.sprite { position: absolute; inline-size: 0; block-size: 0; overflow: hidden; }
+
+/* ---- Typography roles ----------------------------------------------- */
+.t-display {
+  font-family: var(--font-kufi);
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  font-weight: 800;
+  color: var(--navy);
+  text-wrap: balance;
+}
+.t-h1 { font-size: var(--fs-h1); line-height: var(--lh-display); font-weight: 800; color: var(--navy); text-wrap: balance; }
+.t-h2 { font-size: var(--fs-h2); line-height: var(--lh-head); font-weight: 700; color: var(--navy); text-wrap: balance; }
+.t-h3 { font-size: var(--fs-h3); line-height: var(--lh-head); font-weight: 700; color: var(--ink); text-wrap: pretty; }
+.t-h4 { font-size: var(--fs-h4); line-height: 1.55; font-weight: 600; color: var(--ink); text-wrap: pretty; }
+.t-standfirst {
+  font-family: var(--font-naskh);
+  font-size: var(--fs-standfirst);
+  line-height: 1.8;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.t-meta { font-size: var(--fs-meta); line-height: 1.5; color: var(--ink-3); font-weight: 500; }
+
+/* headline link: the running-stitch underline is the hover state */
+.hl a, a.hl {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.32em;
+  text-decoration-skip-ink: none;
+  transition: text-decoration-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out);
+}
+.hl a:hover, a.hl:hover { text-decoration-color: var(--teal); }
+.hl a:visited { color: inherit; }
+
+/* ---- Marks ------------------------------------------------------------
+   .x       one cross-stitch (the atom of the system)
+   .stem    the ط-stem of the logo (historic Palestine) as a solid mark
+   ---------------------------------------------------------------------- */
+.x {
+  display: inline-block;
+  inline-size: var(--x-size, 0.62em);
+  block-size: var(--x-size, 0.62em);
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--mask-x) center / 100% 100% no-repeat;
+  mask: var(--mask-x) center / 100% 100% no-repeat;
+  vertical-align: -0.04em;
+}
+.x--teal { color: var(--teal); }
+.x--teal-ink { color: var(--teal-ink); }
+.x--madder { color: var(--madder); }
+.x--gold { color: var(--gold); }
+
+.stem {
+  display: inline-block;
+  inline-size: calc(var(--stem-h, 1em) * 35 / 75);
+  block-size: var(--stem-h, 1em);
+  background: currentColor;
+  -webkit-mask: var(--mask-stem) center / contain no-repeat;
+  mask: var(--mask-stem) center / contain no-repeat;
+}
+
+/* running-stitch seams (dividers). Never solid hairlines between stories. */
+.seam-top {
+  background-image: repeating-linear-gradient(to left, var(--seam-c, var(--seam)) 0 var(--stitch-len), transparent var(--stitch-len) calc(var(--stitch-len) + var(--stitch-gap)));
+  background-size: 100% var(--seam-w);
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.seam-bottom {
+  background-image: repeating-linear-gradient(to left, var(--seam-c, var(--seam)) 0 var(--stitch-len), transparent var(--stitch-len) calc(var(--stitch-len) + var(--stitch-gap)));
+  background-size: 100% var(--seam-w);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+/* a hem: two parallel running stitches, offset by half a stitch — used to close sections and days */
+.hem {
+  block-size: 8px;
+  background-image:
+    repeating-linear-gradient(to left, var(--hem-c, var(--seam)) 0 var(--stitch-len), transparent var(--stitch-len) calc(var(--stitch-len) + var(--stitch-gap))),
+    repeating-linear-gradient(to left, transparent 0 6px, var(--hem-c, var(--seam)) 6px calc(6px + var(--stitch-len)), transparent calc(6px + var(--stitch-len)) calc(var(--stitch-len) + var(--stitch-gap)));
+  background-size: 100% 2px, 100% 2px;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+}
+
+/* ---- Icons ---------------------------------------------------------- */
+.icon {
+  inline-size: var(--icon-md);
+  block-size: var(--icon-md);
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.icon--sm { inline-size: var(--icon-sm); block-size: var(--icon-sm); }
+.icon--lg { inline-size: var(--icon-lg); block-size: var(--icon-lg); }
+.icon--fill { fill: currentColor; stroke: none; }
+/* arrows that mean "forward" point left in Arabic */
+[dir="rtl"] .icon--flip { transform: scaleX(-1); }
+
+/* ---- Buttons ---------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  min-block-size: 44px;
+  padding: 0 var(--s5);
+  font-family: var(--font-kufi);
+  font-size: var(--fs-ui);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
+}
+.btn--primary { background: var(--navy); color: var(--paper-raised); }
+.btn--primary:hover { background: #01283B; }
+.btn--thread { background: transparent; color: var(--navy); border-color: var(--navy); }
+.btn--thread:hover { background: var(--navy); color: var(--paper-raised); }
+.btn--quiet { padding-inline: var(--s3); color: var(--teal-ink); }
+.btn--thread-light { background: transparent; color: var(--paper-raised); border-color: rgb(255 255 255 / 0.6); }
+.btn--thread-light:hover { background: var(--paper-raised); color: var(--navy); border-color: var(--paper-raised); }
+.btn--quiet:hover { background: var(--mist); }
+.btn[disabled], .btn[aria-disabled="true"] { opacity: 0.45; pointer-events: none; }
+.btn:active { transform: translateY(1px); }
+
+/* the primary button carries its stitches inside: a running stitch inset seam */
+.btn--stitched { position: relative; }
+.btn--stitched::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1.5px dashed rgb(255 255 255 / 0.55);
+  pointer-events: none;
+}
+
+/* text link with arrow (more / view all) */
+.more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  min-block-size: 44px;
+  font-weight: 700;
+  font-size: var(--fs-ui);
+  color: var(--teal-ink);
+  text-decoration: underline dashed transparent 2px;
+  text-underline-offset: 0.4em;
+  transition: text-decoration-color var(--dur-1) var(--ease-out);
+}
+.more-link:hover { text-decoration-color: currentColor; }
+.more-link--gold { color: var(--gold-ink); }
+
+/* ---- Inputs ------------------------------------------------------------- */
+.field {
+  display: block;
+  inline-size: 100%;
+  min-block-size: 48px;
+  padding: var(--s3) var(--s4);
+  background: var(--paper-raised);
+  border: 1.5px solid var(--seam-strong);
+  color: var(--ink);
+  font-size: var(--fs-ui);
+  transition: border-color var(--dur-1) var(--ease-out), box-shadow var(--dur-1) var(--ease-out);
+}
+.field::placeholder { color: var(--ink-3); opacity: 1; }
+.field:hover { border-color: var(--ink-2); }
+.field:focus-visible { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px var(--teal-wash); }
+
+/* chips (filters) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  min-block-size: 40px;
+  padding: 0 var(--s4);
+  border: 1.5px solid var(--seam-strong);
+  background: transparent;
+  color: var(--ink-2);
+  font-weight: 600;
+  font-size: var(--fs-meta);
+  white-space: nowrap;
+  transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
+}
+.chip:hover { border-color: var(--navy); color: var(--navy); }
+.chip[aria-pressed="true"], .chip[aria-current="page"], .chip.is-active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--paper-raised);
+}
+.chip .count { color: inherit; opacity: 0.75; font-weight: 500; }
+
+/* ---- Section heading: the mark sits inline, no eyebrow labels --------- */
+.section-head {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s4);
+  padding-block-end: var(--s3);
+  padding-inline-start: 32px;
+  margin-block-end: var(--s5);
+  border-block-end: 3px solid var(--navy);
+}
+/* the signature: the logo's ط-stem stands on every section's baseline */
+.section-head::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  inline-size: 23px;
+  block-size: 50px;
+  background: var(--teal);
+  -webkit-mask: var(--mask-stem) bottom / contain no-repeat;
+  mask: var(--mask-stem) bottom / contain no-repeat;
+}
+.section-head__title {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s3);
+  font-size: var(--fs-section);
+  line-height: 1.3;
+  font-weight: 800;
+  color: var(--navy);
+}
+.section-head__title .x, .section-head__title > .icon { display: none; }
+.section-head__note { color: var(--ink-3); font-size: var(--fs-meta); }
+.section-head.seam-bottom { background-image: none; }
+.section-head--gold { border-block-end-color: var(--gold); }
+.section-head--gold::before { background: var(--gold); }
+
+/* ---- Dateline: place + time, opens the text (never sits above a headline) */
+.dateline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-kufi);
+  font-weight: 700;
+  font-size: 0.86em;
+  color: var(--teal-ink);
+  white-space: nowrap;
+}
+.dateline .x { --x-size: 0.6em; color: var(--madder); }
+.dateline time { color: var(--ink-2); font-weight: 600; }
+a.dateline__place:hover { text-decoration: underline dashed 2px; text-underline-offset: 0.35em; }
+
+/* the live pulse — the only round thing in the system */
+.live-dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--madder);
+  box-shadow: 0 0 0 0 rgb(163 22 42 / 0.45);
+  animation: pp-pulse 2.4s var(--ease-out) infinite;
+}
+@keyframes pp-pulse {
+  0% { box-shadow: 0 0 0 0 rgb(163 22 42 / 0.45); }
+  70% { box-shadow: 0 0 0 8px rgb(163 22 42 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(163 22 42 / 0); }
+}
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
+
+/* media frames: straight cut, true color, no overlays */
+.frame { position: relative; overflow: hidden; background: var(--mist); }
+.frame img { inline-size: 100%; block-size: 100%; object-fit: cover; }
+.ratio-3x2 { aspect-ratio: 3 / 2; }
+.ratio-4x3 { aspect-ratio: 4 / 3; }
+.ratio-16x9 { aspect-ratio: 16 / 9; }
+.ratio-1x1 { aspect-ratio: 1 / 1; }
+.ratio-4x5 { aspect-ratio: 4 / 5; }
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+  padding-block-start: var(--s2);
+  font-size: var(--fs-meta);
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+.caption__credit { color: var(--ink-2); font-weight: 600; }

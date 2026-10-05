@@ -1,0 +1,122 @@
+/* =========================================================================
+   Palestine Post 2.0 — design tokens
+   World: "the stitch" — Palestinian tatreez read as an information system.
+   Ground is white paper with cool mist bands; ink is the logo navy; the
+   brand thread is the logo teal and the ط-stem of the logo is the signature
+   mark; madder red is reserved for "now / urgent"; gold thread marks special
+   files. Light interface only.
+   ========================================================================= */
+
+:root {
+  /* ---- Color: ground (paper and cool mist, tinted toward the logo teal) */
+  --paper: #FFFFFF;          /* page ground */
+  --paper-raised: #FFFFFF;   /* menus, inputs, overlays (lifted by shadow) */
+  --mist: #F1F6F7;           /* sunk bands: files, media, frames */
+  --mist-deep: #E3ECEE;      /* records, pressed and selected surfaces */
+  --rule: #D5E0E3;           /* hairline when a solid edge is required */
+
+  /* ---- Color: ink (text) -------------------------------------------- */
+  --ink: #0B2230;            /* body text (16.3:1 on paper) */
+  --navy: #023B56;           /* logo navy: masthead, headlines, the baseline (11.9:1) */
+  --ink-2: #43555D;          /* secondary text (7.8:1) */
+  --ink-3: #56656C;          /* metadata and archive, the faded thread (6.0:1) */
+
+  /* ---- Color: threads (each has one job) ----------------------------- */
+  --teal: #33B3C0;           /* logo teal: the ط stem, stitches, marks, fills */
+  --teal-ink: #0A6773;       /* teal for text and links (6.6:1) */
+  --teal-wash: #D6EFF1;      /* selection, highlight */
+  --madder: #B0172C;         /* NOW: breaking, live, urgent (7.0:1) */
+  --madder-wash: #FBE5E7;
+  --gold: #A87A22;           /* special files: seams and marks only */
+  --gold-ink: #7A5814;       /* special files: text (6.5:1) */
+  --gold-wash: #F6EEDC;
+  --olive: #456628;          /* success */
+  --amber: #93500E;          /* warning */
+
+  /* ---- Color: stitches and seams ------------------------------------- */
+  --seam: #A9BCC2;           /* running-stitch dividers (decorative) */
+  --seam-strong: #7C9299;    /* control borders (3.3:1 non-text) */
+  --hole: #C9D6DA;           /* evenweave holes in the weave grid */
+  --scrim: rgb(11 34 48 / 0.55);
+
+  /* ---- Type ---------------------------------------------------------- */
+  --font-kufi: "Noto Kufi Arabic", "Segoe UI", Tahoma, sans-serif;     /* grid-built: display + UI */
+  --font-naskh: "Noto Naskh Arabic", "Noto Naskh", "Times New Roman", serif; /* the hand: reading */
+
+  /* fluid scale (360px → 1440px) */
+  --fs-display: clamp(1.875rem, 1.35rem + 2.2vw, 3.25rem);   /* 30 → 52  lead */
+  --fs-h1: clamp(1.75rem, 1.3rem + 1.7vw, 2.75rem);          /* 28 → 44  article */
+  --fs-h2: clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem);       /* 22 → 30  important */
+  --fs-h3: clamp(1.125rem, 1.03rem + 0.38vw, 1.375rem);      /* 18 → 22  regular */
+  --fs-h4: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);         /* 16 → 17  compact */
+  --fs-section: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);    /* 20 → 26  section titles */
+  --fs-standfirst: clamp(1.125rem, 1.04rem + 0.35vw, 1.375rem); /* 18 → 22 */
+  --fs-body: clamp(1.125rem, 1.07rem + 0.22vw, 1.25rem);     /* 18 → 20  naskh body */
+  --fs-ui: 0.9375rem;        /* 15 */
+  --fs-meta: 0.875rem;       /* 14 */
+  --fs-micro: 0.75rem;       /* 12 — digits only */
+
+  --lh-display: 1.32;        /* bold Arabic needs room for dots */
+  --lh-head: 1.42;
+  --lh-ui: 1.5;
+  --lh-body: 1.95;           /* naskh reading */
+
+  /* ---- Space: the stitch unit (4px) ---------------------------------- */
+  --st: 4px;
+  --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px; --s5: 24px;
+  --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+  --gutter: clamp(16px, 3.2vw, 40px);       /* page side padding */
+  --col-gap: clamp(20px, 2.4vw, 36px);      /* column gap — a column rule sits in it */
+
+  /* ---- Containers ---------------------------------------------------- */
+  --container: 1320px;
+  --measure: 45rem;          /* article body: 720px, ~70 Arabic characters */
+  --measure-wide: 60rem;
+
+  /* ---- Shape: fabric is cut straight --------------------------------- */
+  --radius: 0;
+  --radius-pill: 999px;      /* only for the live pulse dot */
+
+  /* ---- Borders / seams ----------------------------------------------- */
+  --stitch-len: 7px;
+  --stitch-gap: 5px;
+  --seam-w: 2px;
+  --hair: 1px solid var(--rule);
+
+  /* ---- Depth: only for floating layers ------------------------------- */
+  --shadow-float: 0 18px 40px -18px rgb(11 34 48 / 0.30), 0 2px 6px rgb(11 34 48 / 0.08);
+  --shadow-bar: 0 10px 22px -16px rgb(11 34 48 / 0.40);
+
+  /* ---- Motion -------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 140ms;            /* hover, press */
+  --dur-2: 240ms;            /* menus, disclosure */
+  --dur-3: 520ms;            /* one stitch being sewn */
+
+  /* ---- Layers -------------------------------------------------------- */
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-dropdown: 200;
+  --z-drawer: 300;
+  --z-toast: 500;
+
+  /* ---- Icons --------------------------------------------------------- */
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-stroke: 1.75;
+
+  /* ---- Marks (masks keep them recolorable with currentColor) --------- */
+  --mask-x: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.2 2.2l7.6 7.6' stroke='%23000' stroke-opacity='.72' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M9.8 2.2l-7.6 7.6' stroke='%23000' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  --mask-stem: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 75'%3E%3Cpath d='M32 0h3v75H0v-4l3-3 2-2 3-6 1-5 3-4v-7l2-1 1-12 2-1V17l3-1 1-8 8-1 3-3z'/%3E%3C/svg%3E");
+
+  /* breakpoints (documented; media queries cannot read custom properties)
+     sm 480 · md 768 · lg 1024 · xl 1280 · 2xl 1440 */
+
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-1: 0ms; --dur-2: 0ms; --dur-3: 0ms; }
+}
